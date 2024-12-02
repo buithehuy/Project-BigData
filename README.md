@@ -40,3 +40,24 @@ Sử dụng tập dữ liệu: monthly-average-surface-temperatures-by-year.csv.
    ```bash
    hadoop fs -put monthly-average-surface-temperatures-by-year.csv /user/hadoop/input
    ```
+Upload lại dữ liệu đầu vào:
+Format NameNode xóa toàn bộ dữ liệu trong HDFS. Sau khi format, bạn phải upload lại file CSV:
+
+```bash
+hadoop fs -put /path/to/monthly-average-surface-temperatures-by-year.csv /user/hadoop/input/
+```
+Chạy lại job Hadoop:
+Khởi chạy lại file JAR để xử lý dữ liệu:
+
+```bash
+hadoop jar AverageTemperature.jar AverageTemperature /user/hadoop/input /user/hadoop/output
+```
+Kiểm tra kết quả:
+
+```bash
+hadoop fs -cat /user/hadoop/output/part-*
+```
+nếu mất namenode sử dụng:
+```bash
+hadoop namenode -format
+```
