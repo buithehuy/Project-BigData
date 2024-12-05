@@ -61,3 +61,7 @@ nếu mất namenode sử dụng:
 ```bash
 hadoop namenode -format
 ```
+tạo thư mục input:
+```bash
+hadoop fs -mkdir -p /user/hadoop/input
+```
