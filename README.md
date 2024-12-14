@@ -41,7 +41,7 @@ Sử dụng tập dữ liệu: monthly-average-surface-temperatures-by-year.csv.
    hadoop fs -put monthly-average-surface-temperatures-by-year.csv /user/hadoop/input
    ```
 Upload lại dữ liệu đầu vào:
-Format NameNode xóa toàn bộ dữ liệu trong HDFS. Sau khi format, bạn phải upload lại file CSV:
+Format NameNode xóa toàn bộ dữ liệu trong HDFS.
 
 ```bash
 hadoop fs -put /path/to/monthly-average-surface-temperatures-by-year.csv /user/hadoop/input/
