@@ -36,32 +36,11 @@ Dự án này triển khai một ứng dụng Hadoop MapReduce để tính toán
    ```
 #### Tập dữ liệu :
 Dữ liệu được sử dụng từ [Our World In Data](https://ourworldindata.org/grapher/monthly-average-surface-temperatures-by-year)
-Sử dụng tập dữ liệu: monthly-average-surface-temperatures-by-year.csv. Hãy upload file này lên HDFS trước khi chạy job.
+Sử dụng tập dữ liệu: monthly-average-surface-temperatures-by-year.csv. Upload file này lên HDFS trước khi chạy job.
    ```bash
    hadoop fs -put monthly-average-surface-temperatures-by-year.csv /user/hadoop/input
    ```
-Upload lại dữ liệu đầu vào:
-Format NameNode xóa toàn bộ dữ liệu trong HDFS.
-
-```bash
-hadoop fs -put /path/to/monthly-average-surface-temperatures-by-year.csv /user/hadoop/input/
-```
-Chạy lại job Hadoop:
-Khởi chạy lại file JAR để xử lý dữ liệu:
-
-```bash
-hadoop jar AverageTemperature.jar AverageTemperature /user/hadoop/input /user/hadoop/output
-```
-Kiểm tra kết quả:
-
-```bash
-hadoop fs -cat /user/hadoop/output/part-*
-```
-nếu mất namenode sử dụng:
-```bash
-hadoop namenode -format
-```
-tạo thư mục input:
+Tạo thư mục input:
 ```bash
 hadoop fs -mkdir -p /user/hadoop/input
 ```
